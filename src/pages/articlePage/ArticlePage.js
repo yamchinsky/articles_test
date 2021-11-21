@@ -20,19 +20,14 @@ const ArticlePage = () => {
 
   console.log("id params", id)
 
-  const allArticles = useSelector(getAllArticles); const newArr = [];
-  const filteredArr = allArticles.filter(item => { 
-    if(item.source.id !==null) {
-      return newArr.push(item);
-    }
-   return null;
-  })
+  const allArticles = useSelector(getAllArticles); 
 
-  
-  const getArticleById = id => filteredArr.find(article =>  article.id===id);
+
+
+  const getArticleById = id => allArticles.find(article =>  article.source.id===id);
   
 
-  const selectedArticleObjById = getArticleById();
+  const selectedArticleObjById = getArticleById(id);
   console.log("selectedArticleObjById", selectedArticleObjById)
 
   const { title, description, urlToImage,content, author, url} =
