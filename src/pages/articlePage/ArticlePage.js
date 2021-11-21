@@ -38,22 +38,16 @@ const ArticlePage = () => {
 
     return(
       
-      <div className='selectedArticle_container' key={uuidv4()}>
+      <div className='current-article' key={uuidv4()}>
   
-      <button
-        onClick={goBack}
-        className='current-article__button'
-        style={{ position: 'absolute', top: 10, zIndex: 2 }}
-      >
-        Back to Homepage
-      </button>
+      
 
-      <div className='current-article__back' onClick={() => history.push('/')}>
+      <div className='current-article__back' >
         <img src={urlToImage} className='current-article__img' />
       </div>
 
-      <div className='current-article__container'>
-        <img className='current-article__container-img' src={urlToImage} />
+      <div className='current-article__container' onClick={() => history.push('/')}>
+        
         <div className='current-article__container-about'>
           <h1>{title}</h1>
           <p>{author}</p>
@@ -64,8 +58,16 @@ const ArticlePage = () => {
           </p>
           
           <p style={{ marginTop: '20px' }}></p>
+          
         </div>
+       
       </div>
+      <button
+          onClick={goBack}
+          className='current-article__button'
+          style={{ position: 'absolute', top: 10, zIndex: 2 }}>
+          Back to Homepage
+        </button>
     </div>
     )
 }
