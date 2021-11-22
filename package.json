@@ -28,18 +28,11 @@
   "resolutions": {
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yamchinsky/articles_test.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yamchinsky/articles_test/issues"
-  },
+
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "npm run build",
+    "deploy": "netlify deploy -p"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +51,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://yamchinsky/github.io/articles_test"
+  }
+
 }
