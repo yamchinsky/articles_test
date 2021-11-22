@@ -18,7 +18,7 @@ const ArticlePage = () => {
 
   
 
-  console.log("id params", id)
+
 
   const allArticles = useSelector(getAllArticles); 
 
@@ -28,7 +28,7 @@ const ArticlePage = () => {
   
 
   const selectedArticleObjById = getArticleById(id);
-  console.log("selectedArticleObjById", selectedArticleObjById)
+
 
   const { title, description, urlToImage,content, author, url} =
     selectedArticleObjById;

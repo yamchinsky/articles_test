@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 import { getArticle } from '../../redux/article/article.operations';
-import {  getVisibleArticles } from '../../redux/article/article.selectors';
+import { getVisibleArticles } from '../../redux/article/article.selectors';
 
 import Article from '../Article/Article';
 import './ArticlesList.scss'
@@ -19,26 +19,22 @@ const ArticlesList = () => {
     useEffect(() => {
     dispatch(getArticle());
     }, [dispatch]);
+   
+  
+    const allVisibleArticles = useSelector(getVisibleArticles);
 
-
-    const allArticles = useSelector(getVisibleArticles);
 
     
     const newArr = [];
-    const filteredArr = allArticles.filter(item => { 
+    const filteredArr = allVisibleArticles.filter(item => { 
       if(item.source.id !==null) {
         return newArr.push(item);
       }
 
-     return null;
+     return '';
     })
 
-    
    
-
-
-    console.log("filteredArr", filteredArr)
-
     return(
        
         <ul className='ArticlesList'>

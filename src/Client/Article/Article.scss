@@ -35,10 +35,11 @@
   color: #000000;
   padding: 5px;
 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 3;
-    box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  line-clamp: 3;
+  box-orient: vertical;
+ 
     
     @media screen and (min-width: 468px) {
       font-size: 18px;
@@ -51,7 +52,7 @@
     
     
     }
-
+    
   }
 
   &__desc{

@@ -49,27 +49,5 @@
     
 }
   
-  .scroll_to_top {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 3px solid red;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.5s;
-    bottom: 50px;
-    left: 0;
-    right: 25px;
-  
-    &:hover {
-      transform: scale(1.2);
-    }
-  
-    &-active {
-      display: flex;
-    }
-  }
+
   

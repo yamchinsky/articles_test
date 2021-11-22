@@ -4,14 +4,19 @@ const getAllArticles = state => state.article.articles;
 
 const getFilter = state => state.article.filter;
 
+
 const getVisibleArticles = createSelector(
   [getAllArticles, getFilter],
   (article, filter) => {
     
     const normalizedFilter = filter.toLowerCase();
 
-    return article.filter(({ description }) =>
-      description.toLowerCase().includes(normalizedFilter),
+    return article.filter(({ title}) => (
+   
+    title.toLowerCase().includes(normalizedFilter)
+    
+    )
+    
     );
   },
 );
