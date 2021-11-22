@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import {
   getArticleSuccess,
-  getArticleIdSuccess
+  getArticleIdSuccess,
+  filterArticle
 
 } from './article.actions';
 
@@ -11,12 +12,16 @@ import {
 const articles= createReducer([], {
   [getArticleSuccess]: (_, { payload }) => [...payload.articles],
   [getArticleIdSuccess]: (_, { payload }) => [...payload],
- 
- 
+
+});
+
+const filter = createReducer('', {
+  [ filterArticle]: (_, { payload }) => payload,
 });
 
 const articleReducer = combineReducers({
-    articles
+    articles, 
+    filter
 });
 
 export {articleReducer};

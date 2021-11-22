@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 import { getArticle } from '../../redux/article/article.operations';
-import { getAllArticles } from '../../redux/article/article.selectors';
+import {  getVisibleArticles } from '../../redux/article/article.selectors';
 
 import Article from '../Article/Article';
 import './ArticlesList.scss'
@@ -21,7 +21,7 @@ const ArticlesList = () => {
     }, [dispatch]);
 
 
-    const allArticles = useSelector(getAllArticles);
+    const allArticles = useSelector(getVisibleArticles);
 
     
     const newArr = [];
@@ -32,6 +32,8 @@ const ArticlesList = () => {
 
      return null;
     })
+
+    
    
 
 

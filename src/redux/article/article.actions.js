@@ -8,6 +8,9 @@ const getArticleIdRequest = createAction('article/getArticleIdRequest');
 const getArticleIdSuccess = createAction('article/getArticleIdSuccess');
 const getArticleIdError = createAction('article/getArticleIdError');
 
+const filterArticle = createAction('article/filterArticle');
+
+
 
 
 export {
@@ -16,7 +19,6 @@ export {
   getArticleError,
   getArticleIdRequest, 
   getArticleIdSuccess,
-  getArticleIdError
-
-
+  getArticleIdError,
+  filterArticle
 };

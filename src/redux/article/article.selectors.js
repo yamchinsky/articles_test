@@ -1,21 +1,29 @@
+import { createSelector } from "reselect";
+
 const getAllArticles = state => state.article.articles;
 
+const getFilter = state => state.article.filter;
 
-// const allArticles = getAllArticles(); 
-// // const newArr = [];
-// // allArticles.filter(item => { 
-// //   if(item.source.id !==null) {
-// //     return newArr.push(item);
-// //   }
-// //  return null;
-// // })
+const getVisibleArticles = createSelector(
+  [getAllArticles, getFilter],
+  (article, filter) => {
+    
+    const normalizedFilter = filter.toLowerCase();
+
+    return article.filter(({ description }) =>
+      description.toLowerCase().includes(normalizedFilter),
+    );
+  },
+);
 
 
-// const getArticleById = id => allArticles.find(data =>  data.id===id);
+
 
 
 export {
   getAllArticles,
-  // getArticleById,
+  getFilter,
+  getVisibleArticles
+
 
 };
